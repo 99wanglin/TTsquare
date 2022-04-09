@@ -16,7 +16,8 @@ class Tello:
     def __init__(self, tello_ip, Tello_Manager):
         self.tello_ip = tello_ip
         self.Tello_Manager = Tello_Manager
-    def send_command(self, command):
+    def send_command(self, command, instruc_dict):
+        instruc_dict['synced'] = False
         return self.Tello_Manager.send_command(command, self.tello_ip)
 
 class Tello_Manager:
